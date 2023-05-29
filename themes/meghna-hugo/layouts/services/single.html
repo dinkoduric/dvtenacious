@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>{{ .Title }}</h1>
+
+        {{ $image := .Resources.GetMatch (.Params.image_thumb) }}
+        {{ with $image }}
+          {{ with $reimage := $image.Resize "100x100" }}
+            <img class="img-fluid mb-50 lozad" data-src="{{ $reimage.RelPermalink }}}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+          {{ end }}
+        {{ end }}
+
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          {{ .Content }}
+        </div>
+        {{ if site.Params.post_share }}
+        {{ partial "post-share.html" . }}
+        {{ end }}
+        <!-- comments -->
+        <div class="mt-5">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

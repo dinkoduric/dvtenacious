@@ -1,0 +1,68 @@
+{{ if gt site.RegularPages 0}}
+{{"<!-- Start Press Section -->" | safeHTML}}
+<section id="media" class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                {{"<!-- section title -->" | safeHTML}}
+                <div class="title text-center wow fadeInDown">
+                    <h2> {{ with i18n "mediaTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+							{{ with i18n "mediaTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+
+            {{"<!-- section Press Release -->" | safeHTML}}
+            <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+                <div class="post-block">
+                    <div class="media-wrapper d-flex justify-content-center">
+                        <img class="img-fluid lozad" data-src={{"/images/media/press_small.png" | absURL }} onerror="this.onerror=null;this.src='{{ .Params.Image | absURL }}'">
+                    </div>
+                    <div class="content">
+                        <h3><a href="{{ `press` | absLangURL }}">{{ "Press Releases" | markdownify }}</a></h3>
+                        <p>Read the latest news from AWS</p>
+                        <a class="btn btn-transparent" href="{{ `press` | absLangURL }}">{{ i18n "readMore" }}</a>
+                    </div>
+                </div>
+            </article>
+            {{"<!-- /section Press Release -->" | safeHTML}}
+
+
+            {{"<!-- section In The News -->" | safeHTML}}
+            <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+                <div class="post-block">
+                    <div class="media-wrapper d-flex justify-content-center">
+                        <img class="img-fluid lozad" data-src={{"/images/media/news_small.png" | absURL }} onerror="this.onerror=null;this.src='{{ .Params.Image | absURL }}'">
+                    </div>
+                    <div class="content">
+                        <h3><a href="{{ `news` | absLangURL }}">{{ "In the News" | markdownify }}</a></h3>
+                        <p>Check out recent articles about AWS</p>
+                        <a class="btn btn-transparent" href="{{ `news` | absLangURL }}">{{ i18n "readMore" }}</a>
+                    </div>
+                </div>
+            </article>
+            {{"<!-- /section In The News -->" | safeHTML}}
+
+
+            {{"<!-- section Media Kit -->" | safeHTML}}
+            <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+                <div class="post-block">
+                    <div class="media-wrapper d-flex justify-content-center">
+                        <img class="img-fluid lozad" data-src={{"/images/media/media_small.png" | absURL }} onerror="this.onerror=null;this.src='{{ .Params.Image | absURL }}'">
+                    </div>
+                    <div class="content">
+                        <h3><a href="{{ `press` | absLangURL }}">{{ "Media Kit" | markdownify }}</a></h3>
+                        <p>Reporters can learn more about AWS</p>
+                        <a class="btn btn-transparent" href="{{ `media_kit` | absLangURL }}">{{ i18n "readMore" }}</a>
+                    </div>
+                </div>
+            </article>
+            {{"<!-- /section Media Kit -->" | safeHTML}}
+
+        </div>
+    </div>
+</section>
+{{"<!-- /press -->" | safeHTML}}
+{{ end }}
+

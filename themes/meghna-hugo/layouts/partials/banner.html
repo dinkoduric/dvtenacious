@@ -1,0 +1,34 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.banner.banner.enable }}
+{{ with $data.banner.banner }}
+{{"<!-- Welcome Slider-->" | safeHTML}}
+
+<!-- dynamically generate banner images of varying sizes and display the "correct" sized one -->
+{{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch "sea-water-texture.jpg" }}
+{{ $resized := $imageResource.Fit "1600x1200" }}
+
+
+<section class="hero-area" style='background-image: url("{{ $resized.RelPermalink }}")'>
+	<!-- this image is for trigger this section fallback background image -->
+	<img class="d-none" src="{{ $resized.RelPermalink }}" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ $resized.RelPermalink }})'"/>
+
+	<div class="block">
+		{{ if .icon }}
+		<div class="video-button">
+			<i class="{{ .icon }}"></i>
+		</div>
+		{{ end }}
+		<h1>{{ .title | markdownify }}</h1>
+		<h1>{{ .subtitle | markdownify }}</h1>
+		<p>{{ .content | markdownify }}</p>
+		{{ if .button.enable }}
+		{{ with .button }}
+		<a href="{{ .link }}" class="btn btn-transparent page-scroll">{{ .label }}</a>
+		{{ end }}
+		{{ end }}
+	</div>
+</section>
+{{"<!-- /Welcome Slider-->" | safeHTML}}
+{{end}}
+{{end}}

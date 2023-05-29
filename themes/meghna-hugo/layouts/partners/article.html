@@ -1,0 +1,36 @@
+<article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
+  <div class="post-block">
+    <div class="media-wrapper d-flex justify-content-center">
+      {{ $image := .Resources.GetMatch (.Params.thumb) }}
+      <a href="{{ .Params.link }}">
+      {{ if eq .Params.sponsor "Trojan"}}
+        {{ with $reimage := $image.Resize "720x320" }}
+          <img class="img-fluid lozad" data-src="{{ $reimage.RelPermalink }}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+        {{ end }}
+      {{ else if eq .Params.sponsor "Backscatter"}}
+        {{ with $reimage := $image.Resize "720x320" }}
+          <img class="img-fluid lozad" data-src="{{ $reimage.RelPermalink }}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+        {{ end }}
+      {{ else if eq .Params.sponsor "New Jersey Maritime Museum"}}
+        {{ with $reimage := $image.Resize "720x320" }}
+          <img class="img-fluid lozad" data-src="{{ $reimage.RelPermalink }}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+        {{ end }}
+      {{ else if eq .Params.sponsor "Aqua Environment Co"}}
+        {{ with $reimage := $image.Resize "720x320" }}
+          <img class="img-fluid lozad" data-src="{{ $reimage.RelPermalink }}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+        {{ end }}
+      {{ else }}
+        {{ with $reimage := $image.Resize "720x320" }}
+          <img class="img-fluid lozad" data-src="{{ $reimage.RelPermalink }}" onerror="this.onerror=null;this.src='{{ $reimage.RelPermalink }}'">
+        {{ end }}
+      {{ end }}
+      </a>
+    </div>
+
+    <div class="content">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary }}</p>
+      <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+    </div>
+  </div>
+</article>

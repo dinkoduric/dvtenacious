@@ -1,0 +1,6 @@
+<!-- Your embedded video player code -->
+<div id="youtube-video">
+    <iframe width="100%" height="480" src={{ (.Get 0) }}>
+    </iframe>
+</div>
+<figcaption>{{ (.Get 1) | markdownify}}</figcaption>

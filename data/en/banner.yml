@@ -1,0 +1,13 @@
+############################### Banner ################################
+banner:
+  enable : true
+  #bg_image_webp : "images/backgrounds/hero-area.webp"
+  bg_image : "sea-water-texture.jpg"
+  icon : #"images/ships_wheel.png" # themify icon pack : https://themify.me/themify-icons
+  title : "Atlantic Wreck Salvage"
+  # subtitle: "AWS Productions"
+  #content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, excepturi. At recusandae sit perferendis autem,iste tempora nostrum numquam sapiente!"
+  button:
+    enable : trueE
+    label : "Explore"
+    link : "#services"

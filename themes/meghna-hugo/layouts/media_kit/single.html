@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>{{ .Title }}</h1>
+      </div>
+
+      <div class="col-lg-4 offset-2">
+        <h3><strong>Contact</strong></h3>
+        <strong>Jennifer Sellitti</strong><br/>
+        <strong>781-526-0733</strong><br/>
+        <a href = "mailto: jsellitti@dvtenacious.com">jsellitti@dvtenacious.com</a>
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="post-single-content">
+          {{ .Content }}
+        </div>
+        {{ if site.Params.post_share }}
+        {{ partial "post-share.html" . }}
+        {{ end }}
+        <!-- comments -->
+        <div class="mt-5">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

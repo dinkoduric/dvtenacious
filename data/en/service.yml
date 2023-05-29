@@ -1,0 +1,20 @@
+################################# Service #################################
+service:
+  enable : true
+  title : Services
+  service_item :
+    # services item loop
+    - name : Search & Survey
+      thumb: images/services/radar_thumb.png
+      content : Atlantic Wreck Salvage owns and operates D/V Tenacious. The vessel is equipped with side scan and multibeam sonar capabilities. Contract AWS for offshore or inland waterway search and survey operations.
+
+    # services item loop
+    - name : D/V Tenacious
+      thumb: images/services/boat_thumb.png
+      content : Atlantic Wreck Salvage owns and operates D/V Tenacious. The vessel is equipped with side scan and multibeam sonar capabilities. Contract AWS for offshore or inland waterway search and survey operations.
+
+    # services item loop
+    - name : Salvage & Gear Recovery
+      thumb: images/services/anchor_thumb.png
+      content : Atlantic Wreck Salvage provides general ship salvage and commercial gear recovery such as scallop and clam dredges, anchors, buoys, and other equipment recovery.
+

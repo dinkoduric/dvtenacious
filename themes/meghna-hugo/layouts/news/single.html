@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+
+    {{ range site.Data.news }}
+    <div class="container top-buffer">
+      <div class="row post-block">
+        <div class="col-md-3 d-flex align-items-center">
+          <a href="{{.url}}">
+          <img class="img-fluid lozad" data-src={{ .thumb | absURL }} >
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <h3>{{ .name }}</h3>
+          </div>
+          <div class="row">
+            <p>{{ .summary }}</p>
+          </div>
+          <div class="row">
+            {{ if site.Params.post_share }}
+            {{ partial "external-share.html" . }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    {{ end }}
+
+
+  </div>
+</section>
+
+{{ end }}
+

@@ -1,0 +1,25 @@
+############################## Contact #############################
+contact:
+  enable : true
+  title : Contact Us
+  #subtitle : Contact Details
+  #content : TODO -- details here on how/why to contact us.
+
+  # Contact details
+  contact_list:
+      - info : "Pt. Pleasant Beach, NJ"
+      - info : "Joe Mazraani, Services, 732-803-5641"
+      - info : "jmazraani@dvtenacious.com"
+      - info : "Jennifer Sellitti, Marketing and All Aboard program, 781-526-0733"
+      - info : "jsellitti@dvtenacious.com"
+
+
+  # Contact form
+  contact_form:
+    enable : false
+    form_action : "#" #contact form works with https://formspree.io
+    name : "Your Name"
+    email : "Your Email"
+    subject : "Subject"
+    message : "Message"
+    submit : "Submit"

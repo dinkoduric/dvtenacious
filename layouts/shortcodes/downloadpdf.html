@@ -1,0 +1,8 @@
+{{ $img := $.Page.Resources.GetMatch (.Get "src")}}
+<div class="row justify-content-center">
+    <h4>{{(.Get "alt")}}</h4>
+    <div class="col-lg-4 offset-1">
+        <a href={{(.Get "pdf")}}><img src={{(.Get "thumb")}} width={{(.Get "width")}} height="auto" lat={{(.Get "alt")}}></a><br/>
+        <a href={{(.Get "pdf")}}><strong>Download PDF</strong></a>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{{ $img := $.Page.Resources.GetMatch (.Get "src")}}
+<div class="row">
+    <div class="col-lg-4 offset-2 my-auto">
+        <strong><h3>10 Tenacious Years</h3></strong>
+    </div>
+    <div class="col-lg-4 offset-1">
+        <a href={{(.Get "pdf")}}><img src={{(.Get "thumb")}} width="180" height="auto"></a><br/>
+        <a href={{(.Get "pdf")}}><strong>Download PDF</strong></a>
+    </div>
+</div>

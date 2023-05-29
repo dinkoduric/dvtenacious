@@ -1,0 +1,11 @@
+<figure>
+    {{ if .IsNamedParams }}
+        {{ $img := $.Page.Resources.GetMatch (.Get "src")}}
+        <img src="{{ $img.RelPermalink }}" alt="{{(.Get "alt")}}"  width="{{(.Get "width")}}" height="auto" />
+        <figcaption>{{(.Get "alt") | markdownify}}</figcaption>
+    {{ else }}
+        {{ $img := $.Page.Resources.GetMatch (.Get 0)}}
+        <img src="{{ $img.RelPermalink }}" alt="{{(.Get 1)}}"  width="100%" height="auto" />
+        <figcaption>{{(.Get 1) | markdownify}}</figcaption>
+    {{ end }}
+</figure>
